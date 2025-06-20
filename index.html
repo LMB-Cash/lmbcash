@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMB Cash</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGir5062WbM-R9FTYOGm8foLbqRTjvlPndhA&s"
+        alt="LMB Cash Logo"
+        class="logo"
+      />
+      <h1>Bienvenue sur LMB Cash</h1>
+    </header>
+
+    <main>
+      <button id="signupBtn">S’inscrire</button>
+
+      <form id="signupForm" class="hidden">
+        <input type="text" id="nom" placeholder="Nom" required />
+        <input type="text" id="prenom" placeholder="Prénom" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Mot de passe"
+          required
+        />
+        <button type="submit">Créer un compte</button>
+      </form>
+
+      <div id="paymentSection" class="hidden">
+        <h2>Paiement</h2>
+        <select id="paymentMethod" required>
+          <option value="">Choisissez un mode de paiement</option>
+          <option value="moov">MOOV MONEY</option>
+          <option value="mtn">MTN</option>
+          <option value="orange">ORANGE MONEY</option>
+          <option value="mix">MIX BY YAS</option>
+        </select>
+
+        <div style="display: flex; justify-content: center; gap: 10px">
+          <select id="countryCode" required>
+            <option value="+228">🇹🇬 +228</option>
+            <option value="+229">🇧🇯 +229</option>
+            <option value="+225">🇨🇮 +225</option>
+            <option value="+226">🇧🇫 +226</option>
+          </select>
+          <input
+            type="tel"
+            id="phoneNumber"
+            placeholder="Numéro de téléphone"
+            required
+          />
+        </div>
+
+        <button id="payBtn">Payer</button>
+      </div>
+
+      <div id="confirmation" class="hidden">
+        <h2>Inscription réussie !</h2>
+        <p>Votre lien de parrainage :</p>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+          "
+        >
+          <span id="referralLink" style="word-break: break-all"></span>
+          <button id="copyBtn">Copier</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
